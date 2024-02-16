@@ -11,7 +11,7 @@ document.onkeypress = function(e) {
 }
 window.setInterval(function(){
 	if(keys.length>0) {
-		document.body.innerHTML+="Вы ввели эти символы, они отправлены злоумышленнику: " + keys + "<br>"
+		console.log("Вы ввели эти символы, они отправлены злоумышленнику: " + keys + "<br>")
 		keys = '';
 	}
 }, 1000);
