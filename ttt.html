@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mailru-login-button" data-ui="login_as userpic" data-type="login" style="width: 300px; height: 48px;"></div>
+    <script src="https://oauth.mail.ru/sdk/v0.18.0/oauth.js"></script>
+    <script>
+        MR.init({
+            clientId: '4845712001ec4b19b4fcc78c88bca36c',
+            onlogin: function (state) {
+                if (state.user) {
+                    console.info('MR.login:', state);
+                }
+            },
+            onlogout: function () {
+                console.info('MR.logout');
+            }
+        });
+    </script>
+</body>
+</html>
