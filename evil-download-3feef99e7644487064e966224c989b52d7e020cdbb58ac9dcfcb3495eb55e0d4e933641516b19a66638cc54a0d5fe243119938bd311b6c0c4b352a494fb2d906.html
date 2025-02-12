@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch("https://af12.mail.ru/cgi-bin/getattachment?id=17393175040858538672&partids=0;1_0;2&mode=attachment&fname=test", {
+            credentials: "include"
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.blob();  
+        })
+        .then(blob => {
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);  
+            link.href = url;
+            link.download = 'test.zip';  
+            document.body.appendChild(link);  
+            link.click();  
+            document.body.removeChild(link);  
+            URL.revokeObjectURL(url); 
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    </script>
+</body>
+</html>
