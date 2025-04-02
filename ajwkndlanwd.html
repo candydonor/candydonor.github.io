@@ -1,3 +1,11 @@
+<button id="checkStorage">Проверить доступ к localStorage</button>
 <script>
-  localStorage.setItem("asdasd","123")
- </script>
+document.getElementById("checkStorage").addEventListener("click", () => {
+    try {
+        localStorage.setItem("test", "123");
+        alert("✅ Доступ к localStorage есть! " + localStorage.getItem("test"));
+    } catch (e) {
+        alert("❌ Нет доступа к localStorage: " + e);
+    }
+});
+</script>
