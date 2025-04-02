@@ -1,6 +1,6 @@
 <button id="checkStorage">Проверить доступ к localStorage</button>
 <script>
-window.parent.postMessage(JSON.stringify({"type":"WebAppOpenLink", "url":"https://ya.ru"}), "https://web.max.ru");
+window.parent.postMessage(JSON.stringify({"type":"WebAppOpenLink", "url":"javascript:alert(123)"}), "https://web.max.ru");
 window.addEventListener("message", (event) => {
     console.log("Полученные данные:", event.data);
 });
