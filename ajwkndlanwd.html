@@ -1,11 +1,7 @@
 <button id="checkStorage">Проверить доступ к localStorage</button>
 <script>
-document.getElementById("checkStorage").addEventListener("click", () => {
-    try {
-        localStorage.setItem("test", "123");
-        alert("✅ Доступ к localStorage есть! " + localStorage.getItem("test"));
-    } catch (e) {
-        alert("❌ Нет доступа к localStorage: " + e);
-    }
+window.parent.postMessage(JSON.stringify({"type":"WebAppOpenLink", "url":"https://ya.ru"}), "https://web.max.ru");
+window.addEventListener("message", (event) => {
+    console.log("Полученные данные:", event.data);
 });
 </script>
