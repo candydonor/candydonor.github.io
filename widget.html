@@ -51,10 +51,11 @@ var blocksApp = new cp.PaymentBlocks({
       }
     }
 });
-blocksApp.containerManager.container.id = "huiHUI";
+
 blocksApp.mount(document.getElementById("element"));
 blocksApp.on("init", () => {
     blocksApp.containerManager.onPaymentCompleted = () => {alert(1234)};
+    blocksApp.containerManager.container.id = "huiHUI";
 });
 blocksApp.on("destroy", () => {
     console.log("destroy");
