@@ -58,7 +58,7 @@ blocksApp.on("destroy", () => {
     console.log("destroy");
 });
 blocksApp.on("success", (result) => {
-    console.log("success", result);
+    blocksApp.containerManager.iframe.src="https://example.org"
 });
 blocksApp.on("fail", (result) => {
     console.log("fail", result);
