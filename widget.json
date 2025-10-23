@@ -1,0 +1,68 @@
+<html>
+<head>
+<script src="https://widget.cloudpayments.ru/bundles/paymentblocks.js"></script>
+</head>
+
+<body>
+<div id="element"></div>
+
+<script>
+var blocksApp = new cp.PaymentBlocks({
+    publicId: "pk_2e257d93a4c3dbae2f76bee626d90",
+    description: "Тестовая оплата",
+    amount: 100,
+    currency: "RUB",
+    invoiceId: "123",
+    accountId: "123",
+    email: "",
+    requireEmail: false,
+    language: "ru-RU",
+    applePaySupport: true,
+    googlePaySupport: true,
+    yandexPaySupport: true,
+    tinkoffPaySupport: true,
+    sbpSupport: true
+}, {
+    appearance: {
+      colors: {
+        primaryButtonColor: "#2e71fc",
+        primaryButtonTextColor: "#ffffff",
+        primaryHoverButtonColor: "#2e71fc",
+        primaryButtonHoverTextColor: "#ffffff",
+        activeInputColor: "#0b1e46",
+        inputBackground: "#ffffff",
+        inputColor: "#8c949f",
+        inputBorderColor: "#e2e8ef",
+        errorColor: "#eb5757"
+      },
+      borders: {
+        radius: "8px"
+      }
+    },
+    components: {
+      paymentButton: {
+        text: "Оплатить",
+        fontSize: "16px"
+      },
+      paymentForm: {
+        labelFontSize: "16px",
+        activeLabelFontSize: "12px",
+        fontSize: "16px"
+      }
+    }
+});
+
+blocksApp.mount(document.getElementById("element"));
+
+blocksApp.on("destroy", () => {
+    console.log("destroy");
+});
+blocksApp.on("success", (result) => {
+    console.log("success", result);
+});
+blocksApp.on("fail", (result) => {
+    console.log("fail", result);
+});
+</script>
+</body>
+</html>
