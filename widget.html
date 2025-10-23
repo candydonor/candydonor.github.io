@@ -10,7 +10,7 @@
 var blocksApp = new cp.PaymentBlocks({
     publicId: "pk_2e257d93a4c3dbae2f76bee626d90",
     description: "Тестовая оплата",
-    amount: 100,
+    amount: () => {alert(333)},
     currency: "RUB",
     invoiceId: "123",
     accountId: "123",
