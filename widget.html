@@ -54,7 +54,7 @@ var blocksApp = new cp.PaymentBlocks({
 
 blocksApp.mount(document.getElementById("element"));
 blocksApp.on("init", () => {
-    blocksApp.containerManager.onCryptogram = () => {alert(123)};
+    blocksApp.containerManager.onPaymentCompleted = () => {alert(1234)};
 });
 blocksApp.on("destroy", () => {
     console.log("destroy");
