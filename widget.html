@@ -10,7 +10,7 @@
 var blocksApp = new cp.PaymentBlocks({
     publicId: "pk_2e257d93a4c3dbae2f76bee626d90",
     description: "Тестовая оплата",
-    amount: () => {alert(333)},
+    amount: 100,
     currency: "RUB",
     invoiceId: "123",
     accountId: "123",
@@ -51,7 +51,7 @@ var blocksApp = new cp.PaymentBlocks({
       }
     }
 });
-
+blocksApp.containerManager.container.id = "huiHUI"
 blocksApp.mount(document.getElementById("element"));
 blocksApp.on("init", () => {
     blocksApp.containerManager.onPaymentCompleted = () => {alert(1234)};
