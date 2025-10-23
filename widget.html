@@ -53,12 +53,14 @@ var blocksApp = new cp.PaymentBlocks({
 });
 
 blocksApp.mount(document.getElementById("element"));
-
+blocksApp.on("init", () => {
+    blocksApp.containerManager.onCryptogram = () => {alert(123)};
+});
 blocksApp.on("destroy", () => {
     console.log("destroy");
 });
 blocksApp.on("success", (result) => {
-    blocksApp.containerManager.iframe.src="https://example.org"
+    console.log("success");
 });
 blocksApp.on("fail", (result) => {
     console.log("fail", result);
