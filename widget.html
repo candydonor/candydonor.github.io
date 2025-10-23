@@ -25,15 +25,15 @@ var blocksApp = new cp.PaymentBlocks({
 }, {
     appearance: {
       colors: {
-        primaryButtonColor: "#deadbee1",
-        primaryButtonTextColor: "#deadbee2",
-        primaryHoverButtonColor: "#deadbee3",
-        primaryButtonHoverTextColor: "#deadbee4",
-        activeInputColor: "#deadbee5",
-        inputBackground: "#deadbee6",
-        inputColor: "#deadbee7",
-        inputBorderColor: "#deadbee8",
-        errorColor: "#deadbee9"
+        primaryButtonColor: "#deadbeef",
+        primaryButtonTextColor: "#ffffff",
+        primaryHoverButtonColor: "#2e71fc",
+        primaryButtonHoverTextColor: "#ffffff",
+        activeInputColor: "#0b1e46",
+        inputBackground: "#ffffff",
+        inputColor: "#8c949f",
+        inputBorderColor: "#e2e8ef",
+        errorColor: "#eb5757"
       },
       borders: {
         radius: "8px"
@@ -41,7 +41,7 @@ var blocksApp = new cp.PaymentBlocks({
     },
     components: {
       paymentButton: {
-        text: `Оплатить<hr><script>${alert(window.location.origin)}`,
+        text: "Оплатить",
         fontSize: "16px"
       },
       paymentForm: {
