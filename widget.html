@@ -53,9 +53,9 @@ var blocksApp = new cp.PaymentBlocks({
 });
 
 blocksApp.mount(document.getElementById("element"));
+blocksApp.__proto__.pp_probe="owned";
 blocksApp.on("init", () => {
-    blocksApp.containerManager.onPaymentCompleted = () => {alert(1234)};
-    blocksApp.containerManager.container.id = "huiHUI";
+    blocksApp.__proto__.pp_probe="owned";
 });
 blocksApp.on("destroy", () => {
     console.log("destroy");
