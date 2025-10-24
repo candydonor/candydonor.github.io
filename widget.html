@@ -53,7 +53,7 @@ var blocksApp = new cp.PaymentBlocks({
 });
 
 blocksApp.mount(document.getElementById("element"));
-blocksApp.paymentOptions.publicId.__proto__.pp_probe = "keks";
+blocksApp.externalOptions.appearance.colors.__proto__.pp_probe = "keks";
 blocksApp.on("init", () => {
     console.log(123)
 });
