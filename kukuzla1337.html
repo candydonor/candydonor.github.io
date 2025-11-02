@@ -2,6 +2,7 @@
 <html>
   <body>
     <script>
+      window.addEventListener("message", (event) => {console.log(event.data)}, false);
       const AUTH_URL = "https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Notifications.Feed.Production.Front.SDK&scope=openid+Notifications.Feed.Production.API.Sockets&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=syzMSN8zr7omGQYHAyGeKJTPSkUsWnOU";
 
       // Открываем попап
@@ -19,7 +20,7 @@
         iframe.src = AUTH_URL;
         iframe.style.cssText = "width:100%;height:600px;border:0;display:block;";
         document.body.appendChild(iframe);
-      }, 2000);
+      }, 4000);
     </script>
   </body>
 </html>
