@@ -2,8 +2,8 @@
 <html>
   <body>
     <script>
-      window.addEventListener("message", (event) => {console.log(event.data)}, false);
-      const AUTH_URL = "https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Csi.Support.Widget&scope=openid+Live-chat+Csi.Support.Api+Csi.Outages.Api+Csi.Feedbacks.Api+Csi.IncidentChecker.Api&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=pF0zJfMaXtrfnwPioJ81KSDYaDPB6hOB";
+      window.addEventListener("message", (event) => {document.body.innerHTML=JSON.stringify(event.data)}, false);
+      const AUTH_URL = "https://identity.kontur.ru/connect/authorize?response_type=token+id_token&client_id=Csi.Support.Widget&scope=openid+Live-chat+Csi.Support.Api+Csi.Outages.Api+Csi.Feedbacks.Api+Csi.IncidentChecker.Api+profile+email&redirect_uri=https%3A%2F%2Fidentity.kontur.ru%2Fsilent-auth.html&prompt=none&nonce=pF0zJfMaXtrfnwPioJ81KSDYaDPB6hOB";
 
       // Открываем попап
       const popup = open(
